@@ -18,7 +18,11 @@ app.use(function (req, res, next) {
 // respond to all GET requests
 // noinspection JSUnresolvedFunction
 app.get('/', async function (req, res) {
-  res.json({message: 'Express Test App Online', version: pkg.version});
+  res.json({
+    message: 'Express Test App Online',
+    version: pkg.version,
+    processUptime: process.uptime(),
+  });
 });
 
 app.get('/env', async function (req, res) {
